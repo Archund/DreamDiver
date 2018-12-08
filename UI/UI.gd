@@ -1,12 +1,12 @@
 extends Node2D
 
-var micros=[]
+var dreams=[]
 
 var game
 
 
 func load_game():
-	var gamescene =micros[randi() % micros.size()]
+	var gamescene =dreams[randi() % dreams.size()]
 	game = gamescene.instance()
 	add_child(game)
 	game.global_position = Vector2(0,0)
@@ -18,9 +18,9 @@ func load_game():
 
 func _ready():
 	get_node("HEARTS").connect("gameOver", self, "_gameOver")
-	micros = [ 
-		preload("res://micro/Shark/SharkAttack.tscn"),
-		preload("res://micro/Poke/Poker.tscn")
+	dreams = [ 
+		preload("res://dreams/Shark/SharkAttack.tscn"),
+		preload("res://dreams/Poke/Poker.tscn")
 	]
 	load_game()
 

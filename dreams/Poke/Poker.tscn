@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://micro/Shark/SharkAttack.gd" type="Script" id=1]
+[ext_resource path="res://dreams/Poke/Poker.gd" type="Script" id=1]
 [ext_resource path="res://assets/SpriteSheet.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 32.0
+radius = 5.7436
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 23.9778
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,50 +31,51 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.12549, 0.839216, 0.780392, 1 )
+color = Color( 0.572549, 0.862745, 0.729412, 1 )
 
-[node name="Diver" type="KinematicBody2D" parent="." index="1"]
+[node name="Finger" type="KinematicBody2D" parent="." index="1"]
 
-editor/display_folded = true
-position = Vector2( 128, 208 )
+position = Vector2( 304, 256 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 _sections_unfolded = [ "collision" ]
 
-[node name="Sprite" type="Sprite" parent="Diver" index="0"]
+[node name="Sprite" type="Sprite" parent="Finger" index="0"]
 
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 20, 324, 169, 37 )
+region_rect = Rect2( 136, 113, 119, 141 )
 _sections_unfolded = [ "Region" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Diver" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finger" index="1"]
 
-scale = Vector2( 2.78571, 0.592857 )
+position = Vector2( -33, -24.1448 )
+scale = Vector2( 2.78571, 7.22182 )
 shape = SubResource( 1 )
 
-[node name="Shark" type="KinematicBody2D" parent="." index="2"]
+[node name="Eye" type="KinematicBody2D" parent="." index="2"]
 
 editor/display_folded = true
-position = Vector2( 512, 208 )
+position = Vector2( 288, 64 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 _sections_unfolded = [ "collision" ]
 
-[node name="Sprite" type="Sprite" parent="Shark" index="0"]
+[node name="Sprite" type="Sprite" parent="Eye" index="0"]
 
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 16, 268, 166, 53 )
+region_rect = Rect2( 15, 71, 104, 37 )
 _sections_unfolded = [ "Region" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eye" index="1"]
 
-scale = Vector2( 2.78571, 0.753572 )
-shape = SubResource( 1 )
+position = Vector2( -0.653845, 0 )
+scale = Vector2( 1.75501, 0.843081 )
+shape = SubResource( 2 )
 
 
