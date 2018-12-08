@@ -10,6 +10,8 @@ var Tim
 var activeSegments
 var uptime
 
+var helpText
+
 
 
 
@@ -21,11 +23,9 @@ func initTim():
 	Tim.start()
 	get_node("CAT").frame=0
 
-
 func win():
 	Tim.stop()
 	#get success signal
-
 
 func lose():
 	Tim.stop()
@@ -34,12 +34,18 @@ func lose():
 	emit_signal("minus")
 
 func timeOver():
-	get_node("CAT").frame = 1
+	lose()
 	get_parent().reset()
-
 
 func _timeout():
 	activeSegments = activeSegments - 1
+
+
+func start(game):
+	helpText.set(game.MESSAGE)
+	initTim()
+
+
 
 
 
@@ -47,17 +53,13 @@ func _ready():
 	
 	#Timer segment array
 	TA = get_node("Tstart").get_children()
+	helpText = get_node("INFO")
 
 	#create the timer
 	Tim = Timer.new()
 	self.add_child(Tim)
 	Tim.connect("timeout", self, "_timeout")
 	initTim()
-
-
-
-
-
 
 
 

@@ -3,6 +3,8 @@ extends Node2D
 var dreams=[]
 
 var game
+var winSound
+var loseSound
 
 
 func load_game():
@@ -12,7 +14,7 @@ func load_game():
 	game.global_position = Vector2(0,0)
 	game.connect("win",self,"_win")
 	game.connect("lose",self,"_lose")
-	get_node("TIME").initTim()
+	get_node("TIME").start(game)
 
 
 
@@ -22,6 +24,10 @@ func _ready():
 		preload("res://dreams/Shark/SharkAttack.tscn"),
 		preload("res://dreams/Poke/Poker.tscn")
 	]
+
+	winSound = get_node("winSound")
+	loseSound = get_node("loseSound")
+
 	load_game()
 
 
@@ -29,10 +35,12 @@ func _ready():
 func _win():
 	get_node("TIME").win()
 	global.score = global.score+1
+	winSound.play(0)
 	reset()
 
 func _lose():
 	get_node("TIME").lose()
+	loseSound.play(0)
 	reset()
 
 

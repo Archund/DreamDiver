@@ -9,12 +9,15 @@ var finger
 var eye
 
 var speed = 20
+var eyeMN = 120
+var eyeMX = 520
 
 var movement = Vector2()
 
 func _ready():
 	finger = get_node("Finger")
 	eye = get_node("Eye")
+	eye.position.x = rand_range(eyeMN, eyeMX)
 
 func checkInput():
 	var mouse = get_viewport().get_mouse_position()

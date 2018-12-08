@@ -1,11 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://UI/HEARTS.gd" type="Script" id=2]
 [ext_resource path="res://assets/Hearts.png" type="Texture" id=3]
 [ext_resource path="res://UI/TIME.gd" type="Script" id=4]
-[ext_resource path="res://assets/Cat.png" type="Texture" id=5]
-[ext_resource path="res://assets/Timer.png" type="Texture" id=6]
+[ext_resource path="res://assets/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://UI/INFO.gd" type="Script" id=6]
+[ext_resource path="res://assets/Cat.png" type="Texture" id=7]
+[ext_resource path="res://assets/Timer.png" type="Texture" id=8]
+[ext_resource path="res://assets/lose.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/win.wav" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Settings" ]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,6 +27,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="HEARTS" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -51,20 +64,47 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 4 )
-time = 1.5
+time = 1
 
-[node name="CAT" type="Sprite" parent="TIME" index="0"]
+[node name="INFO" type="Label" parent="TIME" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 248.0
+margin_bottom = 96.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Help Text"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="CAT" type="Sprite" parent="TIME" index="1"]
 
 position = Vector2( 112, 322 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 vframes = 2
 _sections_unfolded = [ "Animation" ]
 
-[node name="Tstart" type="Sprite" parent="TIME" index="1"]
+[node name="Tstart" type="Sprite" parent="TIME" index="2"]
 
 editor/display_folded = true
 position = Vector2( 112, 336 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -72,7 +112,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="T1" type="Sprite" parent="TIME/Tstart" index="0"]
 
 position = Vector2( 64, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 2
 _sections_unfolded = [ "Animation" ]
@@ -80,7 +120,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="T2" type="Sprite" parent="TIME/Tstart" index="1"]
 
 position = Vector2( 128, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 2
 _sections_unfolded = [ "Animation" ]
@@ -88,7 +128,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="T3" type="Sprite" parent="TIME/Tstart" index="2"]
 
 position = Vector2( 192, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 2
 _sections_unfolded = [ "Animation" ]
@@ -96,7 +136,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="T4" type="Sprite" parent="TIME/Tstart" index="3"]
 
 position = Vector2( 256, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 2
 _sections_unfolded = [ "Animation" ]
@@ -104,7 +144,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="T5" type="Sprite" parent="TIME/Tstart" index="4"]
 
 position = Vector2( 320, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 2
 _sections_unfolded = [ "Animation" ]
@@ -112,13 +152,14 @@ _sections_unfolded = [ "Animation" ]
 [node name="T6" type="Sprite" parent="TIME/Tstart" index="5"]
 
 position = Vector2( 384, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 5
 frame = 3
 _sections_unfolded = [ "Animation" ]
 
 [node name="ColorRect" type="ColorRect" parent="." index="2"]
 
+show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -134,5 +175,24 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.47451, 0.227451, 0.501961, 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="loseSound" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="winSound" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
