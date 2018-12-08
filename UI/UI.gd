@@ -5,6 +5,7 @@ var dreams=[]
 var game
 var winSound
 var loseSound
+var song
 
 
 func load_game():
@@ -27,6 +28,9 @@ func _ready():
 
 	winSound = get_node("winSound")
 	loseSound = get_node("loseSound")
+	song = get_node("song")
+	song.connect("finished", self, "_songLoop")
+	song.play(0)
 
 	load_game()
 
@@ -53,3 +57,7 @@ func reset():
 func _gameOver():
 	print("GAME OVER")
 	get_tree().change_scene("res://screens/GameOver.tscn")
+
+
+func _songLoop():
+	song.play(0)
