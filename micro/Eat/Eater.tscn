@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/SpriteSheet.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="Table" type="Sprite" parent="." index="0"]
+
+position = Vector2( 320, 240 )
+scale = Vector2( 2.06504, 2.06504 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 259, 180, 123, 73 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Chicken" type="Sprite" parent="." index="1"]
+
+position = Vector2( 96, 224 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 259, 285, 61, 35 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Zomb" type="Sprite" parent="." index="2"]
+
+position = Vector2( 528, 224 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 259, 253, 61, 31 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Yes" type="Sprite" parent="." index="3"]
+
+position = Vector2( 128, 96 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 38, 128, 68 )
+_sections_unfolded = [ "Region" ]
+
+[node name="No" type="Sprite" parent="." index="4"]
+
+position = Vector2( 528, 96 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 261, 111, 119, 66 )
+_sections_unfolded = [ "Region" ]
+
+
