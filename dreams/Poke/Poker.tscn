@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://dreams/Poke/Poker.gd" type="Script" id=1]
-[ext_resource path="res://global/assets/SpriteSheet.png" type="Texture" id=2]
+[ext_resource path="res://global/assets/Sprites/SpriteSheet.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.7436
@@ -31,7 +31,6 @@ scale = Vector2( 2.78571, 7.22182 )
 shape = SubResource( 1 )
 
 [node name="Eye" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 288, 64 )
 
 [node name="Sprite" type="Sprite" parent="Eye"]

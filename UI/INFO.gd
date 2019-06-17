@@ -17,7 +17,7 @@ func _timeout():
 	self.visible = false
 	print("text timeout")
 
-func set(info):
+func sset(info):
 	self.text = str(info)
 	self.visible = true
 	timer.start()

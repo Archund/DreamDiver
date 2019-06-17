@@ -1,6 +1,6 @@
 extends Control
 
-var splashScreen
+#var splashScreen
 var startScreen
 var button
 var song

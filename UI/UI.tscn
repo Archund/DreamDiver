@@ -2,210 +2,118 @@
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://UI/HEARTS.gd" type="Script" id=2]
-[ext_resource path="res://global/assets/Hearts.png" type="Texture" id=3]
+[ext_resource path="res://global/assets/Sprites/Hearts.png" type="Texture" id=3]
 [ext_resource path="res://UI/TIME.gd" type="Script" id=4]
-[ext_resource path="res://global/assets/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://global/assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://UI/INFO.gd" type="Script" id=6]
-[ext_resource path="res://global/assets/Cat.png" type="Texture" id=7]
-[ext_resource path="res://global/assets/Timer.png" type="Texture" id=8]
-[ext_resource path="res://global/assets/lose.wav" type="AudioStream" id=9]
-[ext_resource path="res://global/assets/win.wav" type="AudioStream" id=10]
-[ext_resource path="res://global/assets/mainLoop.wav" type="AudioStream" id=11]
-
-
-
+[ext_resource path="res://global/assets/Sprites/Cat.png" type="Texture" id=7]
+[ext_resource path="res://global/assets/Sprites/Timer.png" type="Texture" id=8]
+[ext_resource path="res://global/assets/Audio/lose.wav" type="AudioStream" id=9]
+[ext_resource path="res://global/assets/Audio/win.wav" type="AudioStream" id=10]
+[ext_resource path="res://global/assets/Audio/mainLoop.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-
-size = 16
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 5 )
-_sections_unfolded = [ "Settings" ]
 
 [node name="Node2D" type="Node2D"]
-
 position = Vector2( -32, -32 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="HEARTS" type="CanvasLayer" parent="." index="0"]
-
+[node name="HEARTS" type="CanvasLayer" parent="."]
 editor/display_folded = true
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 2 )
 
-[node name="H1" type="Sprite" parent="HEARTS" index="0"]
-
+[node name="H1" type="Sprite" parent="HEARTS"]
 position = Vector2( 48, 32 )
 texture = ExtResource( 3 )
 vframes = 3
-_sections_unfolded = [ "Animation" ]
 
-[node name="H2" type="Sprite" parent="HEARTS" index="1"]
-
+[node name="H2" type="Sprite" parent="HEARTS"]
 position = Vector2( 96, 32 )
 texture = ExtResource( 3 )
 vframes = 3
-_sections_unfolded = [ "Animation" ]
 
-[node name="H3" type="Sprite" parent="HEARTS" index="2"]
-
+[node name="H3" type="Sprite" parent="HEARTS"]
 position = Vector2( 144, 32 )
 texture = ExtResource( 3 )
 vframes = 3
-_sections_unfolded = [ "Animation" ]
 
-[node name="TIME" type="CanvasLayer" parent="." index="1"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+[node name="TIME" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
-time = 1
 
-[node name="INFO" type="Label" parent="TIME" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="INFO" type="Label" parent="TIME"]
 margin_left = 48.0
 margin_top = 48.0
 margin_right = 248.0
 margin_bottom = 96.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Help Text"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 script = ExtResource( 6 )
-_sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="CAT" type="Sprite" parent="TIME" index="1"]
-
+[node name="CAT" type="Sprite" parent="TIME"]
 position = Vector2( 112, 322 )
 texture = ExtResource( 7 )
 vframes = 2
-_sections_unfolded = [ "Animation" ]
 
-[node name="Tstart" type="Sprite" parent="TIME" index="2"]
-
+[node name="Tstart" type="Sprite" parent="TIME"]
 editor/display_folded = true
 position = Vector2( 112, 336 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 1
-_sections_unfolded = [ "Animation" ]
 
-[node name="T1" type="Sprite" parent="TIME/Tstart" index="0"]
-
+[node name="T1" type="Sprite" parent="TIME/Tstart"]
 position = Vector2( 64, 0 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 2
-_sections_unfolded = [ "Animation" ]
 
-[node name="T2" type="Sprite" parent="TIME/Tstart" index="1"]
-
+[node name="T2" type="Sprite" parent="TIME/Tstart"]
 position = Vector2( 128, 0 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 2
-_sections_unfolded = [ "Animation" ]
 
-[node name="T3" type="Sprite" parent="TIME/Tstart" index="2"]
-
+[node name="T3" type="Sprite" parent="TIME/Tstart"]
 position = Vector2( 192, 0 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 2
-_sections_unfolded = [ "Animation" ]
 
-[node name="T4" type="Sprite" parent="TIME/Tstart" index="3"]
-
+[node name="T4" type="Sprite" parent="TIME/Tstart"]
 position = Vector2( 256, 0 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 2
-_sections_unfolded = [ "Animation" ]
 
-[node name="T5" type="Sprite" parent="TIME/Tstart" index="4"]
-
+[node name="T5" type="Sprite" parent="TIME/Tstart"]
 position = Vector2( 320, 0 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 2
-_sections_unfolded = [ "Animation" ]
 
-[node name="T6" type="Sprite" parent="TIME/Tstart" index="5"]
-
+[node name="T6" type="Sprite" parent="TIME/Tstart"]
 position = Vector2( 384, 0 )
 texture = ExtResource( 8 )
 hframes = 5
 frame = 3
-_sections_unfolded = [ "Animation" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="2"]
-
+[node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 32.0
 margin_top = 32.0
 margin_right = 672.0
 margin_bottom = 400.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.47451, 0.227451, 0.501961, 1 )
-_sections_unfolded = [ "Visibility" ]
 
-[node name="loseSound" type="AudioStreamPlayer" parent="." index="3"]
-
+[node name="loseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="winSound" type="AudioStreamPlayer" parent="." index="4"]
-
+[node name="winSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="song" type="AudioStreamPlayer" parent="." index="5"]
-
+[node name="song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-

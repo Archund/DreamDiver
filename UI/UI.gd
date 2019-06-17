@@ -56,7 +56,7 @@ func reset():
 
 func _gameOver():
 	print("GAME OVER")
-	get_tree().change_scene("res://screens/GameOver.tscn")
+	get_tree().change_scene("res://global/GameOver.tscn")
 
 
 func _songLoop():

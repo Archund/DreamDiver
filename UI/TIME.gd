@@ -42,7 +42,7 @@ func _timeout():
 
 
 func start(game):
-	helpText.set(game.MESSAGE)
+	helpText.sset(game.MESSAGE)
 	initTim()
 
 
