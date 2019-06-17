@@ -16,12 +16,21 @@ _global_script_class_icons={
 [application]
 
 config/name="DreamDiver"
-run/main_scene="res://main.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://boot.tscn"
+boot_splash/image="res://global/assets/Sprites/Cat.png"
+boot_splash/bg_color=Color( 0.768627, 0.662745, 0.662745, 1 )
+config/icon="res://global/assets/Sprites/icon.png"
 
 [autoload]
 
 global="*res://global/global.gd"
+
+[debug]
+
+gdscript/warnings/unsafe_property_access=true
+gdscript/warnings/unsafe_method_access=true
+gdscript/warnings/unsafe_cast=true
+gdscript/warnings/unsafe_call_argument=true
 
 [display]
 

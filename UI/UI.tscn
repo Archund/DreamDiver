@@ -2,15 +2,17 @@
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://UI/HEARTS.gd" type="Script" id=2]
-[ext_resource path="res://assets/Hearts.png" type="Texture" id=3]
+[ext_resource path="res://global/assets/Hearts.png" type="Texture" id=3]
 [ext_resource path="res://UI/TIME.gd" type="Script" id=4]
-[ext_resource path="res://global/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://global/assets/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://UI/INFO.gd" type="Script" id=6]
-[ext_resource path="res://assets/Cat.png" type="Texture" id=7]
-[ext_resource path="res://assets/Timer.png" type="Texture" id=8]
-[ext_resource path="res://assets/lose.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/win.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/mainLoop.wav" type="AudioStream" id=11]
+[ext_resource path="res://global/assets/Cat.png" type="Texture" id=7]
+[ext_resource path="res://global/assets/Timer.png" type="Texture" id=8]
+[ext_resource path="res://global/assets/lose.wav" type="AudioStream" id=9]
+[ext_resource path="res://global/assets/win.wav" type="AudioStream" id=10]
+[ext_resource path="res://global/assets/mainLoop.wav" type="AudioStream" id=11]
+
+
 
 
 [sub_resource type="DynamicFont" id=1]
